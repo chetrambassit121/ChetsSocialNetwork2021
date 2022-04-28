@@ -14,7 +14,9 @@ from pathlib import Path
 import os
 # import django_on_heroku
 import django_heroku
-# from decouple import config 
+from decouple import config 
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -122,9 +124,9 @@ DATABASES = {
 }
 
 
-# db_from_env = dj_database_url.config(conn_max_age=500)            # added ... required for the dj_databse_url module
-# DATABASES['default'].update(db_from_env)                          # added ... required for the dj_databse_url module
-#                                                                   # https://pypi.org/project/django-database-url/
+db_from_env = dj_database_url.config(conn_max_age=500)            # added ... required for the dj_databse_url module
+DATABASES['default'].update(db_from_env)                          # added ... required for the dj_databse_url module
+                                                                  # https://pypi.org/project/django-database-url/
 
 
 
@@ -196,5 +198,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MEDIA_URL = '/media/'
 # django_on_heroku.settings(locals())    # added ... required for django heroku 
-# django_heroku.settings(locals())    # added ... required for django heroku 
+django_heroku.settings(locals())    # added ... required for django heroku 
 
