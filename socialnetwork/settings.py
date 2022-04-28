@@ -87,7 +87,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    # 'whitenoise.middleware.WhiteNoiseMiddleware', # added ... to help serve static files during production follow this link https://medium.com/@naufal.ihsan21/how-to-serve-static-files-in-django-using-whitenoise-cda11f9bb643 
+    'whitenoise.middleware.WhiteNoiseMiddleware', # added ... to help serve static files during production follow this link https://medium.com/@naufal.ihsan21/how-to-serve-static-files-in-django-using-whitenoise-cda11f9bb643 
 
 ]
 
