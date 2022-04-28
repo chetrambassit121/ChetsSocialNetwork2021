@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 # import django_on_heroku
-# import django_heroku
+import django_heroku
 # from decouple import config 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
