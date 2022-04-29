@@ -11,11 +11,13 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
 import os
 # import django_on_heroku
 import django_heroku
 from decouple import config 
 import dj_database_url
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +29,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = config('SECRET_KEY')
-SECRET_KEY = 'django-insecure-xaf&0yt@jf4^#(l)z)%zv-4jvn#9aco^8$mg(n90fsb1hmg+k='
+SECRET_KEY = os.getenv('SECRET_KEY')
+
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
